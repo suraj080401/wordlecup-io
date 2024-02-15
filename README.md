@@ -1,81 +1,42 @@
-# Turborepo starter
+# Single Room Chat Application
 
-This is an official starter Turborepo.
+This is a single-room chat application where users can come and chat in real-time.
 
-## Using this example
+## Features
 
-Run the following command:
+- Real-time messaging using Socket.IO
+- Single room for all users
+- Built with Next.js and Node.js
+- Utilizes TypeScript for type safety
 
-```sh
-npx create-turbo@latest
-```
+## Technologies Used
 
-## What's inside?
+- [Next.js](https://nextjs.org/) - React framework for frontend
+- [Node.js](https://nodejs.org/) - JavaScript runtime for backend
+- [Socket.IO](https://socket.io/) - Library for real-time web applications
+- [TypeScript](https://www.typescriptlang.org/) - Typed superset of JavaScript
 
-This Turborepo includes the following packages/apps:
+## Setup Instructions
 
-### Apps and Packages
+1. **Clone the repository:**
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+   ```bash
+   git clone <repository-url>
+   ```
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+2. **Install dependencies:**
 
-### Utilities
+   ```bash
+   cd <repository-folder>
+   npm install
+   ```
 
-This Turborepo has some additional tools already setup for you:
+3. **Start the development server:**
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+   ```bash
+   npm run dev
+   ```
 
-### Build
+4. **Open your browser and navigate to** `http://localhost:3000` **to access the chat application.**
 
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+5. **Note** : **This is a MonoRepo all the frontend and backend is in the single repo and both can run by using single developement run mentioned above**
