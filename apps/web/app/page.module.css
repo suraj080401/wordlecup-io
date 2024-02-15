@@ -154,6 +154,8 @@
 	width: 55vw;
 	height: 5vh;
 	border-radius: 20px;
+	font-size: large;
+	padding: 0 20px;
 }
 
 .InputBox {
@@ -165,6 +167,8 @@
 
 .ChatList {
 	height: 72vh;
+	padding: 20px;
+	overflow-y: auto;
 }
 
 .sendButton {
@@ -181,6 +185,39 @@
 	align-items: center;
 }
 
+.sendButton:hover {
+	cursor: pointer;
+}
+
 .SingleChat {
-	width: auto;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+.chatMessage {
+	width: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	background-color: #1d24ca;
+	padding: 10px;
+	border-radius: 20px;
+	margin-top: 5px;
+}
+
+.chatUserName {
+	font-size: small;
+}
+
+.chatText {
+	font-size: large;
+	color: white;
+}
+
+.chatTime {
+	font-size: x-small;
+	color: white;
+	margin: 0 5px;
 }
