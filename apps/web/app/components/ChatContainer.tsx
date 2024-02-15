@@ -1,33 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../page.module.css";
-import { IoSend } from "react-icons/io5";
+import { FaArrowUp } from "react-icons/fa";
 import SingleChatBox from "./SingleChatBox";
+import { useSocket } from "../../context/SocketProvider";
+import { useSearchParams } from "next/navigation";
 
 interface IMessage {
-	name: string;
+	name: string | null;
 	message: string;
 	time: string;
 }
 
 export const ChatContainer: React.FC = () => {
-	const [allMessages, setAllMessages] = useState<IMessage[]>([]);
+	const { sendMessage, messages } = useSocket();
 	const [currentMessage, setCurrentMessage] = useState<string>("");
+	const searchParams = useSearchParams();
+	const storedName = searchParams.get("name");
 
-	const onSendingMessage = () => {
+	const getTimeString = () => {
 		const date = new Date();
 		let hours = date.getHours() % 12 || 12;
 		const minutes = date.getMinutes().toString().padStart(2, "0");
 		let stringhours = hours < 10 ? "0" + hours : hours;
 		const currentTimeString: string = `${stringhours}:${minutes}`;
+		return currentTimeString;
+	};
 
-		const newMesage: IMessage = {
-			name: "Suraj Singh",
+	const timeString = getTimeString();
+
+	const onSendingMessage = () => {
+		const messageObject = {
+			name: storedName,
+			time: timeString,
 			message: currentMessage,
-			time: currentTimeString,
 		};
 
-		setAllMessages((prevArray) => [...prevArray, newMesage]);
-
+		sendMessage(messageObject);
 		setCurrentMessage("");
 	};
 
@@ -35,13 +43,15 @@ export const ChatContainer: React.FC = () => {
 		<div className={styles.ChatContainer}>
 			<div className={styles.ChatBox}>
 				<div className={styles.ChatList}>
-					{allMessages.map((item, index) => {
+					{messages.map((item, index) => {
 						return (
-							<SingleChatBox
-								name={item.name}
-								message={item.message}
-								time={item.time}
-							/>
+							<div key={index}>
+								<SingleChatBox
+									name={item.name}
+									message={item.message}
+									time={item.time}
+								/>
+							</div>
 						);
 					})}
 				</div>
@@ -60,7 +70,7 @@ export const ChatContainer: React.FC = () => {
 							onSendingMessage();
 						}}
 					>
-						<IoSend />
+						<FaArrowUp />
 					</div>
 				</div>
 			</div>

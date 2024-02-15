@@ -18,6 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
 			</div>
 			<div className={styles.rightContainer}>
 				<div className={styles.aboutText}>About</div>
+				<div className={styles.aboutText}>Contact</div>
 				{!isLogged ? (
 					<a className={styles.joinText} href="/join">
 						Join

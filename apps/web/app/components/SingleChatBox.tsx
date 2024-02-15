@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../page.module.css";
 
 interface IMessageProps {
-	name: string;
+	name: string | null;
 	message: string;
 	time: string;
 }

@@ -1,5 +1,11 @@
 import { Server } from "socket.io";
 
+interface MessageDetails {
+	name: string | null;
+	message: string;
+	time: string;
+}
+
 class SocketService {
 	private _io: Server;
 	constructor() {
@@ -17,9 +23,13 @@ class SocketService {
 		console.log("Initialise socket listners");
 		io.on("connect", async (socket) => {
 			console.log(`New Socket Connected : ${socket.id}`);
-			socket.on("event:message", async ({ message }: { message: string }) => {
-				console.log(`New Message : ${message}`);
-			});
+			socket.on(
+				"event:message",
+				async ({ name, message, time }: MessageDetails) => {
+					console.log(`New Message from ${name} at ${time}: ${message}`);
+					io.emit("message", { name, message, time });
+				},
+			);
 		});
 	}
 
