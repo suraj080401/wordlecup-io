@@ -1,8 +1,13 @@
 import React from "react";
 import styles from "../page.module.css";
 import { FaSnapchatGhost } from "react-icons/fa";
+import Button from "./Button";
 
-export const Navbar: React.FC = ({}) => {
+interface NavbarProps {
+	isLogged: boolean;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
 	return (
 		<div className={styles.navbarHeader}>
 			<div className={styles.logoContainer}>
@@ -13,7 +18,13 @@ export const Navbar: React.FC = ({}) => {
 			</div>
 			<div className={styles.rightContainer}>
 				<div className={styles.aboutText}>About</div>
-				<div className={styles.joinText}>Join</div>
+				{!isLogged ? (
+					<a className={styles.joinText} href="/join">
+						Join
+					</a>
+				) : (
+					""
+				)}
 			</div>
 		</div>
 	);

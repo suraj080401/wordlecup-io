@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../page.module.css";
-import { FaArrowRight } from "react-icons/fa";
+import Button from "./Button";
 
 export const LandingContainer: React.FC = ({}) => {
 	return (
@@ -10,8 +10,8 @@ export const LandingContainer: React.FC = ({}) => {
 				as easy on a <span className={styles.highlightedText}>click</span> of
 				button
 			</div>
-			<div className={styles.chatNow}>
-				<div>Chat Now</div>
+			<div>
+				<Button title="Chat Now" />
 			</div>
 		</div>
 	);
