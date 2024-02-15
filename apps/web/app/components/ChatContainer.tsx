@@ -28,6 +28,12 @@ export const ChatContainer: React.FC = () => {
 
 	const timeString = getTimeString();
 
+	const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+		if (e.key === "Enter") {
+			onSendingMessage();
+		}
+	};
+
 	const onSendingMessage = () => {
 		const messageObject = {
 			name: storedName,
@@ -62,6 +68,9 @@ export const ChatContainer: React.FC = () => {
 							className={styles.inputMessageBox}
 							onChange={(e) => setCurrentMessage(e.target.value)}
 							value={currentMessage}
+							onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+								handleKeyPress(e);
+							}}
 						/>
 					</div>
 					<div

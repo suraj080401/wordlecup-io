@@ -11,7 +11,9 @@ export const LandingContainer: React.FC = ({}) => {
 				button
 			</div>
 			<div>
-				<Button title="Chat Now" />
+				<a href="/join">
+					<Button title="Chat Now" />
+				</a>
 			</div>
 		</div>
 	);

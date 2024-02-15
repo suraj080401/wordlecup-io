@@ -1,28 +1,42 @@
-## Getting Started
+# Single Room Chat Application
 
-First, run the development server:
+This is a single-room chat application where users can come and chat in real-time.
 
-```bash
-yarn dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Real-time messaging using Socket.IO
+- Single room for all users
+- Built with Next.js and Node.js
+- Utilizes TypeScript for type safety
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-To create [API routes](https://nextjs.org/docs/app/building-your-application/routing/router-handlers) add an `api/` directory to the `app/` directory with a `route.ts` file. For individual endpoints, create a subfolder in the `api` directory, like `api/hello/route.ts` would map to [http://localhost:3000/api/hello](http://localhost:3000/api/hello).
+- [Next.js](https://nextjs.org/) - React framework for frontend
+- [Node.js](https://nodejs.org/) - JavaScript runtime for backend
+- [Socket.IO](https://socket.io/) - Library for real-time web applications
+- [TypeScript](https://www.typescriptlang.org/) - Typed superset of JavaScript
 
-## Learn More
+## Setup Instructions
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
+   ```bash
+   git clone <repository-url>
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. **Install dependencies:**
 
-## Deploy on Vercel
+   ```bash
+   cd <repository-folder>
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
+3. **Start the development server:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser and navigate to** `http://localhost:3000` **to access the chat application.**
+
+5. **Note** : **This is a MonoRepo all the frontend and backend is in the single repo and both can run by using single developement run mentioned above**
