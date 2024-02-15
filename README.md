@@ -40,3 +40,8 @@ This is a single-room chat application where users can come and chat in real-tim
 4. **Open your browser and navigate to** `http://localhost:3000` **to access the chat application.**
 
 5. **Note** : **This is a MonoRepo all the frontend and backend is in the single repo and both can run by using single developement run mentioned above**
+
+![Landing Page](apps/web/public/LandingPage.png)
+![Joining Page](apps/web/public/LandingPage.png)
+![Chat Screen 1](apps/web/public/ChatScreen1.png)
+![Chat Screen 2](apps/web/public/ChatScreen2.png)
