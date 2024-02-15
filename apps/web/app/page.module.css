@@ -201,6 +201,14 @@
 	margin-bottom: 10px;
 }
 
+.SelfChat {
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+	align-items: flex-end;
+}
+
 .chatMessage {
 	width: fit-content;
 	display: flex;

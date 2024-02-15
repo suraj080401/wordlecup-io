@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../page.module.css";
+import { useSearchParams } from "next/navigation";
 
 interface IMessageProps {
 	name: string | null;
@@ -12,8 +13,11 @@ export const ChatContainer: React.FC<IMessageProps> = ({
 	message,
 	time,
 }) => {
+	const searchParams = useSearchParams();
+	const storedName = searchParams.get("name");
+
 	return (
-		<div className={styles.SingleChat}>
+		<div className={storedName === name ? styles.SelfChat : styles.SingleChat}>
 			<div className={styles.chatUserName}>{name}</div>
 			<div className={styles.chatMessage}>
 				<div className={styles.chatText}>{message}</div>
